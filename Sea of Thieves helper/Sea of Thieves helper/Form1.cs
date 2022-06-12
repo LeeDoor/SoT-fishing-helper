@@ -38,18 +38,19 @@ namespace Sea_of_Thieves_helper
                 this.Controls.Add(butt);
                 fishButtons[i] = butt;
             }
-            selectedId = 1;
-            OnSelectedChanged?.Invoke(fishButtons[selectedId]);
+            SetSelectedId(0);
         }
-        void gkh_KeyUp(object sender, KeyEventArgs e)
+        public void gkh_KeyUp(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
             {
                 case Keys.NumPad2:
                     break;
                 case Keys.NumPad4:
+                    SetSelectedId(false);
                     break;
                 case Keys.NumPad6:
+                    SetSelectedId(true);
                     break;
                 case Keys.NumPad8:
                     break;
@@ -58,6 +59,35 @@ namespace Sea_of_Thieves_helper
                     this.TopMost = false;
                     break;
             }
+        }
+
+        private void SetSelectedId(int id)
+        {
+            if(0 <= id && id <= FishDataBase.Fishes.Count - 1)
+            {
+                selectedId = id;
+            }
+            OnSelectedChanged?.Invoke(fishButtons[selectedId]);
+        }
+        private void SetSelectedId(bool isForward)
+        {
+            if (isForward)
+            {
+                selectedId++;
+                if (selectedId >= FishDataBase.Fishes.Count)
+                {
+                    selectedId = 0;
+                }
+            }
+            else
+            {
+                selectedId--;
+                if (selectedId < 0)
+                {
+                    selectedId = FishDataBase.Fishes.Count - 1;
+                }
+            }
+            OnSelectedChanged?.Invoke(fishButtons[selectedId]);
         }
 
         public void ButtonSelectedChanged(Button newSelected)
