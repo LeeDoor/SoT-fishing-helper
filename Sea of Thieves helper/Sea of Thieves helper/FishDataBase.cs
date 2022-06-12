@@ -139,7 +139,51 @@ namespace Sea_of_Thieves_helper
 							new FishCost(160, 400),
 							new FishCost(25, 60)
 						}
+					)
+				}
+			),
+			new Fish("Ancientscales", "Ancientscales can be found in the open waters of The Ancient Isles. Requires Leeches as Bait to catch.",
+				new Species[]{
+					new Species ("Almond Ancientscale", "Base variant", "",
+						new FishCost[]{
+							new FishCost(255, 565),
+							new FishCost(305, 765),
+							new FishCost(340, 850),
+							new FishCost(50, 130)
+						}
 					),
+					new Species ("Sapphire Ancientscale", "Common variant", "",
+						new FishCost[]{
+							new FishCost(300, 750),
+							new FishCost(405, 1015),
+							new FishCost(450, 1125),
+							new FishCost(70, 170)
+						}
+					),
+					new Species ("Smoke Ancientscale", "Uncommon variant", "",
+						new FishCost[]{
+							new FishCost(375, 940),
+							new FishCost(505, 1270),
+							new FishCost(565, 1410),
+							new FishCost(85, 210)
+						}
+					),
+					new Species ("Bone Ancientscale", "Rare variant", "",
+						new FishCost[]{
+							new FishCost(3000, 7500),
+							new FishCost(4050, 10125),
+							new FishCost(4500, 11250),
+							new FishCost(675, 1690)
+						}
+					),
+					new Species ("Starshine Ancientscale", "Night variant", "",
+						new FishCost[]{
+							new FishCost(300, 750),
+							new FishCost(405, 1015),
+							new FishCost(450, 1125),
+							new FishCost(70, 170)
+						}
+					)
 				}
 			)
 		};
