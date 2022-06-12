@@ -97,6 +97,50 @@ namespace Sea_of_Thieves_helper
 						}
 					),
 				}
+			),
+			new Fish("Islehoppers", "Islehoppers can be found in the waters surrounding Large Islands. Does not require Bait to catch.",
+				new Species[]{
+					new Species ("Stone Islehopper", "Found at Shipwreck Bay, Shark Bait Cove, Crook's Hollow, Sailor's Bounty, Cannon Cove and Fetcher's Rest.", "",
+						new FishCost[]{
+							new FishCost(105, 265),
+							new FishCost(140, 360),
+							new FishCost(160, 400),
+							new FishCost(25, 60)
+						}
+					),
+					new Species ("Moss Islehopper", "Found at Ashen Reaches, Thieves' Haven, Marauder's Arch, Lone Cove, Wanderers Refuge and Ruby's Fall.", "",
+						new FishCost[]{
+							new FishCost(105, 265),
+							new FishCost(140, 360),
+							new FishCost(160, 400),
+							new FishCost(25, 60)
+						}
+					),
+					new Species ("Honey Islehopper", "Found at Discovery Ridge, Plunder Valley, Kraken's Fall, Sunken Grove, Crescent Isle and The Devil's Thirst", "",
+						new FishCost[]{
+							new FishCost(105, 265),
+							new FishCost(140, 360),
+							new FishCost(160, 400),
+							new FishCost(25, 60)
+						}
+					),
+					new Species ("Raven Islehopper", "A rare sight at any large island. (TIP: Fish for this variant during the day at any island where Amethyst Islehoppers are found. You will only get Splashtails or Raven Islehoppers.)", "",
+						new FishCost[]{
+							new FishCost(1050, 2625),
+							new FishCost(1420, 3545),
+							new FishCost(1575, 3940),
+							new FishCost(235, 590)
+						}
+					),
+					new Species ("Amethyst Islehopper", "A night time catch found at Devil's Ridge, Smuggler's Bay, Mermaid's Hideaway, The Crooked Masts, Old Faithful Isle, Flintlock Peninsula and Snake Island.", "",
+						new FishCost[]{
+							new FishCost(105, 265),
+							new FishCost(140, 360),
+							new FishCost(160, 400),
+							new FishCost(25, 60)
+						}
+					),
+				}
 			)
 		};
 	}
