@@ -10,5 +10,11 @@ namespace Sea_of_Thieves_helper
     {
         public int Regular;
         public int Trophy;
+
+        public FishCost(int reguar, int trophy)
+        {
+            Regular = reguar;
+            Trophy = trophy;
+        }
     }
 }

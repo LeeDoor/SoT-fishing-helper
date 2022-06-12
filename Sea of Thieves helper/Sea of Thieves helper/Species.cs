@@ -5,13 +5,13 @@
         public string Name { get;private set; }
         public string Picture { get;private set; }
         public string SpecialFishingMethod { get; private set; }
-        public Dictionary<string, FishCost> Cost { get; private set; }
+        public FishCost[] Costs { get; private set; }
 
-        public Species(string name, string specialFishingMethod, Dictionary<string, FishCost> cost, string picture)
+        public Species(string name, string specialFishingMethod, string picture, FishCost[] costs)
         {
             Name = name;
             SpecialFishingMethod = specialFishingMethod;
-            Cost = cost;
+            Costs = costs;
             Picture = picture;
         }
     }
