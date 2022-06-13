@@ -8,11 +8,12 @@ namespace Sea_of_Thieves_helper
 {
 	public static class FishDataBase
 	{
+		private static readonly string FISH_PHOTO_PATH = "Images\\fishes";
 		public static List<Fish> Fishes { get; private set; } = new List<Fish>()
 		{
-			new Fish("Splashtails", "Splashtails are found in most open bodies of water.Does not require Bait to catch.",
+			new Fish("splashtail", "Splashtails are found in most open bodies of water.Does not require Bait to catch.", $"{FISH_PHOTO_PATH}\\Ruby_Splashtail.jpg",
 				new Species[]{
-					new Species ("Ruby Splashtail", "Base variant", "",
+					new Species ("rubyqqsplashtail", "Base variant", "",
 						new FishCost[]{
 							new FishCost(75, 190),
 							new FishCost(100, 255),
@@ -20,7 +21,7 @@ namespace Sea_of_Thieves_helper
 							new FishCost(15, 45)
 						}
 					),
-					new Species ("Sunny Splashtail", "Common variant", "",
+					new Species ("sunny splashtail", "Common variant", "",
 						new FishCost[]{
 							new FishCost(150, 375),
 							new FishCost(205, 505),
@@ -28,7 +29,7 @@ namespace Sea_of_Thieves_helper
 							new FishCost(35, 85)
 						}
 					),
-					new Species ("Indigo Splashtail", "Uncommon variant", "",
+					new Species ("indigo splashtail", "Uncommon variant", "",
 						new FishCost[]{
 							new FishCost(255, 565),
 							new FishCost(305, 765),
@@ -36,7 +37,7 @@ namespace Sea_of_Thieves_helper
 							new FishCost(50, 130)
 						}
 					),
-					new Species ("Umber Splashtail", "Rare variant", "",
+					new Species ("umber splashtail", "Rare variant", "",
 						new FishCost[]{
 							new FishCost(375, 940),
 							new FishCost(505, 1270),
@@ -44,7 +45,7 @@ namespace Sea_of_Thieves_helper
 							new FishCost(80, 210)
 						}
 					),
-					new Species ("Seafoam Splashtail", "Night variant", "",
+					new Species ("seafoam splashtail", "Night variant", "",
 						new FishCost[]{
 							new FishCost(150, 375),
 							new FishCost(205, 505),
@@ -54,9 +55,9 @@ namespace Sea_of_Thieves_helper
 					),
 				}
 			),
-			new Fish("Pondies", "Pondies are found in freshwater Ponds. Does not require Bait to catch.",
+			new Fish("pondie", "Pondies are found in freshwater Ponds. Does not require Bait to catch.", $"{FISH_PHOTO_PATH}\\Charcoal_Pondie.jpg",
 				new Species[]{
-					new Species ("Charcoal Pondie", "Base variant", "",
+					new Species ("charcoal pondie", "Base variant", "",
 						new FishCost[]{
 							new FishCost(75, 190),
 							new FishCost(100, 255),
@@ -64,7 +65,7 @@ namespace Sea_of_Thieves_helper
 							new FishCost(15, 45)
 						}
 					),
-					new Species ("Orchid Pondie", "Common variant", "",
+					new Species ("orchid pondie", "Common variant", "",
 						new FishCost[]{
 							new FishCost(150, 375),
 							new FishCost(205, 505),
@@ -72,7 +73,7 @@ namespace Sea_of_Thieves_helper
 							new FishCost(35, 85)
 						}
 					),
-					new Species ("Bronze Pondie", "Uncommon variant", "",
+					new Species ("bronze pondie", "Uncommon variant", "",
 						new FishCost[]{
 							new FishCost(255, 565),
 							new FishCost(305, 765),
@@ -80,7 +81,7 @@ namespace Sea_of_Thieves_helper
 							new FishCost(50, 130)
 						}
 					),
-					new Species ("Bright Pondie", "Rare variant", "",
+					new Species ("bright pondie", "Rare variant", "",
 						new FishCost[]{
 							new FishCost(375, 940),
 							new FishCost(505, 1270),
@@ -88,7 +89,7 @@ namespace Sea_of_Thieves_helper
 							new FishCost(80, 210)
 						}
 					),
-					new Species ("Moonsky Pondie", "Night variant", "",
+					new Species ("moonsky pondie", "Night variant", "",
 						new FishCost[]{
 							new FishCost(150, 375),
 							new FishCost(205, 505),
@@ -98,7 +99,7 @@ namespace Sea_of_Thieves_helper
 					),
 				}
 			),
-			new Fish("Islehoppers", "Islehoppers can be found in the waters surrounding Large Islands. Does not require Bait to catch.",
+			new Fish("islehopper", "Islehoppers can be found in the waters surrounding Large Islands. Does not require Bait to catch.", $"{FISH_PHOTO_PATH}\\Stone_Islehopper.jpg",
 				new Species[]{
 					new Species ("Stone Islehopper", "Found at Shipwreck Bay, Shark Bait Cove, Crook's Hollow, Sailor's Bounty, Cannon Cove and Fetcher's Rest.", "",
 						new FishCost[]{
@@ -142,7 +143,7 @@ namespace Sea_of_Thieves_helper
 					)
 				}
 			),
-			new Fish("Ancientscales", "Ancientscales can be found in the open waters of The Ancient Isles. Requires Leeches as Bait to catch.",
+			new Fish("ancientscale", "Ancientscales can be found in the open waters of The Ancient Isles. Requires Leeches as Bait to catch.", $"{FISH_PHOTO_PATH}\\Smoke_Ancientscale.jpg",
 				new Species[]{
 					new Species ("Almond Ancientscale", "Base variant", "",
 						new FishCost[]{
