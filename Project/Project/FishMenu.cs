@@ -3,67 +3,99 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing.Imaging;
 
 namespace Sea_of_Thieves_helper
 {
-    public delegate void SelectedChanged(Button newSelected);
+    public delegate void SelectedChanged(PictureBox newSelected);
+
+
     public static class FishMenu
     {
         public static event SelectedChanged OnSelectedChanged;
 
-        public static Button[] fishButtons;
+        public static PictureBox[] fishIcons;
+        public static PictureBox selectedIcon;
         public static int selectedId;
 
-        public static void CreateButtons()
+        public static readonly int 
+            pictureWidth = 125,
+            pictureHeight = 151,
+            space = 10,
+            gridHeight = 2,
+            gridWidth = 5;
+        public static void CreateIconsAllFishes()
         {
-            fishButtons = new Button[FishDataBase.Fishes.Count];
-            OnSelectedChanged += ButtonSelectedChanged;
+            OnSelectedChanged += IconSelectedChanged;
+            fishIcons = new PictureBox[FishDataBase.Fishes.Count];
 
-            for (int i = 0; i < FishDataBase.Fishes.Count; i++)
+            for (int height = 0; height < gridHeight; height++)
             {
-                Button butt = new Button();
-                butt.Size = new Size(70, 70);
-                butt.BackColor = Color.Black;
-                butt.ForeColor = Color.White;
-                butt.Location = new Point(i * 80, 0);
-                butt.Text = FishDataBase.Fishes[i].Name;
-                Form1.source.Controls.Add(butt);
-                fishButtons[i] = butt;
+                for (int width = 0; width < gridWidth; width++)
+                {
+                    CreateFishPicture(width, height);
+                }
             }
             SetSelectedId(0);
+            //CreateSelectedIcon();
         }
-        public static void ButtonSelectedChanged(Button newSelected)
+
+        private static void CreateSelectedIcon() 
         {
-            foreach (var button in fishButtons)
+            selectedIcon = new PictureBox();
+            selectedIcon.Size = new Size(pictureWidth, pictureHeight);
+            selectedIcon.SizeMode = PictureBoxSizeMode.StretchImage;
+            selectedIcon.Image = Image.FromFile(Form1.workingDir + "\\Images\\IconGreenScreen.png");
+            Form1.source.Controls.Add(selectedIcon);
+        }
+
+        private static void CreateFishPicture(int width, int height)
+        {
+
+            PictureBox pictureBox = new PictureBox();
+            pictureBox.Size = new Size(pictureWidth, pictureHeight);
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox.Location = new Point(space + (pictureWidth+space)*width, space + (pictureHeight + space) * height);
+            pictureBox.Image = Image.FromFile(Form1.workingDir + "\\" + FishDataBase.Fishes[width + height * gridWidth].Picture);
+            fishIcons[width + height * gridWidth] = pictureBox;
+            Form1.source.Controls.Add(pictureBox);
+        }
+
+        public static void IconSelectedChanged(PictureBox newSelected)
+        {
+            foreach (var icon in fishIcons)
             {
-                if (button == newSelected)
+                if (icon == newSelected)
                 {
-                    SetSelected(button);
+                    SetSelected(icon);
                 }
                 else
                 {
-                    SetUnselected(button);
+                    SetUnselected(icon);
                 }
             }
 
         }
-        private static void SetSelected(Button button)
+        private static void SetSelected(PictureBox icon)
         {
-            button.BackColor = Color.FromArgb(255, Color.Black);
-            button.Select();
+            //if (fishIcons != null)
+            //    selectedIcon.Location = new Point(fishIcons[selectedId].Location.X - 10, fishIcons[selectedId].Location.Y - 10);
+            //else
+            //    MessageBox.Show("SELECTED ICON NOT LOADED");
+        }
+
+        private static void SetUnselected(PictureBox icon)
+        {
 
         }
-        private static void SetUnselected(Button button)
-        {
-            button.BackColor = Color.FromArgb(100, Color.Black);
-        }
+
         private static void SetSelectedId(int id)
         {
             if (0 <= id && id <= FishDataBase.Fishes.Count - 1)
             {
                 selectedId = id;
             }
-            OnSelectedChanged?.Invoke(fishButtons[selectedId]);
+            OnSelectedChanged?.Invoke(fishIcons[selectedId]);
         }
         private static void SetSelectedId(bool isForward)
         {
@@ -83,7 +115,7 @@ namespace Sea_of_Thieves_helper
                     selectedId = FishDataBase.Fishes.Count - 1;
                 }
             }
-            OnSelectedChanged?.Invoke(fishButtons[selectedId]);
+            OnSelectedChanged?.Invoke(fishIcons[selectedId]);
         }
         public static void gkh_KeyDown(object sender, KeyEventArgs e)
         {

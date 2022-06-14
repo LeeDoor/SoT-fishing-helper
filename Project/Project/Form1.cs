@@ -35,24 +35,8 @@ namespace Sea_of_Thieves_helper
 			//    listView1.Items.Add(item);
 			//}
 
-			
-			int pictureWidth = 125, 
-				pictureHeight = 151, 
-				space = 10;
-			for(int height = 0; height < 2; height++)
-            {
-				for (int width = 0; width < 5; width++)
-				{
-					PictureBox pictureBox = new PictureBox();
-					pictureBox.Size = new Size(pictureWidth, pictureHeight);
-					pictureBox.Location = new Point(width * (pictureWidth + space) + space, space);
-					pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-					pictureBox.Image = Image.FromFile(workingDir + "\\" + FishDataBase.Fishes[width+hegiht*width].Picture);
-					Controls.Add(pictureBox);
-				}
-			}
-			
-	  
+
+			FishMenu.CreateIconsAllFishes();
 		}
 
 		private void listView1_SelectedIndexChanged(object sender, EventArgs e)
