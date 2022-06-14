@@ -186,6 +186,50 @@ namespace Sea_of_Thieves_helper
 						}
 					)
 				}
+			),
+			new Fish("plentfins", "Plentifins can be found in the open waters of The Shores of Plenty. Requires Earthworms as Bait to catch.", $"{FISH_PHOTO_PATH}\\Olive_Plentifin.jpg",
+				new Species[]{
+					new Species ("Olive Plentifin", "Base variant", "",
+						new FishCost[]{
+							new FishCost(255, 565),
+							new FishCost(305, 765),
+							new FishCost(340, 850),
+							new FishCost(50, 130)
+						}
+					),
+					new Species ("Amber Plentifin", "Common variant", "",
+						new FishCost[]{
+							new FishCost(300, 750),
+							new FishCost(405, 1015),
+							new FishCost(450, 1125),
+							new FishCost(70, 170)
+						}
+					),
+					new Species ("Cloudy Plentifin", "Uncommon variant", "",
+						new FishCost[]{
+							new FishCost(375, 940),
+							new FishCost(505, 1270),
+							new FishCost(565, 1410),
+							new FishCost(85, 210)
+						}
+					),
+					new Species ("Bonedust Plentifin", "Rare variant", "",
+						new FishCost[]{
+							new FishCost(3000, 7500),
+							new FishCost(4050, 10125),
+							new FishCost(4500, 11250),
+							new FishCost(675, 1690)
+						}
+					),
+					new Species ("Watery Plentifin", "Night variant", "",
+						new FishCost[]{
+							new FishCost(300, 750),
+							new FishCost(405, 1015),
+							new FishCost(450, 1125),
+							new FishCost(70, 170)
+						}
+					)
+				}
 			)
 		};
 	}
