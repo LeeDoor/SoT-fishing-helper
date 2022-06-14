@@ -187,7 +187,7 @@ namespace Sea_of_Thieves_helper
 					)
 				}
 			),
-			new Fish("plentfins", "Plentifins can be found in the open waters of The Shores of Plenty. Requires Earthworms as Bait to catch.", $"{FISH_PHOTO_PATH}\\Olive_Plentifin.jpg",
+			new Fish("plentfin", "Plentifins can be found in the open waters of The Shores of Plenty. Requires Earthworms as Bait to catch.", $"{FISH_PHOTO_PATH}\\Olive_Plentifin.jpg",
 				new Species[]{
 					new Species ("Olive Plentifin", "Base variant", "",
 						new FishCost[]{
@@ -227,6 +227,226 @@ namespace Sea_of_Thieves_helper
 							new FishCost(405, 1015),
 							new FishCost(450, 1125),
 							new FishCost(70, 170)
+						}
+					)
+				}
+			),
+			new Fish("wildsplash", "Wildsplashes are found in the open waters of The Wilds. Requires Earthworms as Bait to catch.", $"{FISH_PHOTO_PATH}\\Russet_Wildsplash.jpg",
+				new Species[]{
+					new Species ("Russet Wildsplash", "Base variant", "",
+						new FishCost[]{
+							new FishCost(255, 565),
+							new FishCost(305, 765),
+							new FishCost(340, 850),
+							new FishCost(50, 130)
+						}
+					),
+					new Species ("Sandy Wildsplash", "Common variant", "",
+						new FishCost[]{
+							new FishCost(300, 750),
+							new FishCost(405, 1015),
+							new FishCost(450, 1125),
+							new FishCost(70, 170)
+						}
+					),
+					new Species ("Ocean Wildsplash", "Uncommon variant", "",
+						new FishCost[]{
+							new FishCost(375, 940),
+							new FishCost(505, 1270),
+							new FishCost(565, 1410),
+							new FishCost(85, 210)
+						}
+					),
+					new Species ("Muddy Wildsplash", "Rare variant", "",
+						new FishCost[]{
+							new FishCost(3000, 7500),
+							new FishCost(4050, 10125),
+							new FishCost(4500, 11250),
+							new FishCost(675, 1690)
+						}
+					),
+					new Species ("Coral Wildsplash", "Night variant", "",
+						new FishCost[]{
+							new FishCost(300, 750),
+							new FishCost(405, 1015),
+							new FishCost(450, 1125),
+							new FishCost(70, 170)
+						}
+					)
+				}
+			),
+			new Fish("devilfish", "Devilfish are one of the four Regional Fish that are only found in the open waters of The Devil's Roar. Requires Grubs as Bait to catch.", $"{FISH_PHOTO_PATH}\\Ashen_Devilfish.jpg",
+				new Species[]{
+					new Species ("Ashen Devilfish", "Base variant", "",
+						new FishCost[]{
+							new FishCost(255, 565),
+							new FishCost(305, 765),
+							new FishCost(340, 850),
+							new FishCost(50, 130)
+						}
+					),
+					new Species ("Seashell Devilfish", "Common variant", "",
+						new FishCost[]{
+							new FishCost(300, 750),
+							new FishCost(405, 1015),
+							new FishCost(450, 1125),
+							new FishCost(70, 170)
+						}
+					),
+					new Species ("Lava Devilfish", "Uncommon variant", "",
+						new FishCost[]{
+							new FishCost(375, 940),
+							new FishCost(505, 1270),
+							new FishCost(565, 1410),
+							new FishCost(85, 210)
+						}
+					),
+					new Species ("Forsaken Devilfish", "Rare variant", "",
+						new FishCost[]{
+							new FishCost(3000, 7500),
+							new FishCost(4050, 10125),
+							new FishCost(4500, 11250),
+							new FishCost(675, 1690)
+						}
+					),
+					new Species ("Firelight Devilfish", "Night variant", "",
+						new FishCost[]{
+							new FishCost(300, 750),
+							new FishCost(405, 1015),
+							new FishCost(450, 1125),
+							new FishCost(70, 170)
+						}
+					)
+				}
+			),
+			new Fish("battlegill", "Battlegills are found in waters near Skeleton Ships, and any active Skeleton Fort, Fort of Fortune, or Fort of the Damned. Requires Grubs as Bait to catch.", $"{FISH_PHOTO_PATH}\\Jade_Battlegill.jpg",
+				new Species[]{
+					new Species ("Jade Battlegill", "Base variant", "",
+						new FishCost[]{
+							new FishCost(375, 940),
+							new FishCost(505, 1270),
+							new FishCost(565, 1410),
+							new FishCost(85, 210)
+						}
+					),
+					new Species ("Sky Battlegill", "Common variant", "",
+						new FishCost[]{
+							new FishCost(450, 1125),
+							new FishCost(610, 1520),
+							new FishCost(675, 1690),
+							new FishCost(100, 225)
+						}
+					),
+					new Species ("Rum Battlegill", "Uncommon variant", "",
+						new FishCost[]{
+							new FishCost(525, 1315),
+							new FishCost(710, 1775),
+							new FishCost(790, 1975),
+							new FishCost(120, 295)
+						}
+					),
+					new Species ("Sand Battlegill", "Rare variant", "",
+						new FishCost[]{
+							new FishCost(3750, 9375),
+							new FishCost(5065, 12655),
+							new FishCost(5625, 14065),
+							new FishCost(845, 2110)
+						}
+					),
+					new Species ("Bittersweet Battlegill", "Night variant", "",
+						new FishCost[]{
+							new FishCost(450, 1125),
+							new FishCost(610, 1520),
+							new FishCost(675, 1690),
+							new FishCost(100, 225)
+						}
+					)
+				}
+			),
+			new Fish("stormfish", "Stormfish are found in open waters inside heavy Storms. Requires Leeches as Bait to catch.", $"{FISH_PHOTO_PATH}\\Ancient_Stormfish.jpg",
+				new Species[]{
+					new Species ("Ancient Stormfish", "The Ancient Isles variant", "",
+						new FishCost[]{
+							new FishCost(450, 1125),
+							new FishCost(610, 1520),
+							new FishCost(675, 1690),
+							new FishCost(100, 225)
+						}
+					),
+					new Species ("Shores Stormfish", "The Shores of Plenty variant", "",
+						new FishCost[]{
+							new FishCost(450, 1125),
+							new FishCost(610, 1520),
+							new FishCost(675, 1690),
+							new FishCost(100, 225)
+						}
+					),
+					new Species ("Wild Stormfish", "The Wilds variant", "",
+						new FishCost[]{
+							new FishCost(450, 1125),
+							new FishCost(610, 1520),
+							new FishCost(675, 1690),
+							new FishCost(100, 225)
+						}
+					),
+					new Species ("Shadow Stormfish", "Rare variant", "",
+						new FishCost[]{
+							new FishCost(4500, 11250),
+							new FishCost(6075, 15190),
+							new FishCost(6750, 16875),
+							new FishCost(1015, 1400)
+						}
+					),
+					new Species ("Twilight Stormfish", "Night variant", "",
+						new FishCost[]{
+							new FishCost(450, 1125),
+							new FishCost(610, 1520),
+							new FishCost(675, 1690),
+							new FishCost(100, 225)
+						}
+					)
+				}
+			),
+			new Fish("wreckers", "Wreckers can only be found near Shipwrecks. Requires Earthworms as Bait to catch.", $"{FISH_PHOTO_PATH}\\Rose_Wrecker.jpg",
+				new Species[]{
+					new Species ("Rose Wrecker", "Base variant", "",
+						new FishCost[]{
+							new FishCost(375, 940),
+							new FishCost(505, 1270),
+							new FishCost(565, 1410),
+							new FishCost(85, 210)
+						}
+					),
+					new Species ("Sun Wrecker", "Common variant", "",
+						new FishCost[]{
+							new FishCost(450, 1125),
+							new FishCost(610, 1520),
+							new FishCost(675, 1690),
+							new FishCost(100, 225)
+						}
+					),
+					new Species ("Blackcloud Wrecker", "Uncommon variant", "",
+						new FishCost[]{
+							new FishCost(525, 1315),
+							new FishCost(710, 1775),
+							new FishCost(790, 1975),
+							new FishCost(120, 295)
+						}
+					),
+					new Species ("Snow Wrecker", "Rare variant", "",
+						new FishCost[]{
+							new FishCost(3750, 9375),
+							new FishCost(5065, 12655),
+							new FishCost(5625, 14065),
+							new FishCost(845, 2110)
+						}
+					),
+					new Species ("Moon Wrecker", "Night variant", "",
+						new FishCost[]{
+							new FishCost(450, 1125),
+							new FishCost(610, 1520),
+							new FishCost(675, 1690),
+							new FishCost(100, 225)
 						}
 					)
 				}
