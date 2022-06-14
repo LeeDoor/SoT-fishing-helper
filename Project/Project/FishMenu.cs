@@ -36,14 +36,14 @@ namespace Sea_of_Thieves_helper
                     CreateFishPicture(width, height);
                 }
             }
+            CreateSelectedIcon();
             SetSelectedId(0);
-            //CreateSelectedIcon();
         }
 
         private static void CreateSelectedIcon() 
         {
             selectedIcon = new PictureBox();
-            selectedIcon.Size = new Size(pictureWidth, pictureHeight);
+            selectedIcon.Size = new Size(pictureWidth + 10, pictureHeight + 10);
             selectedIcon.SizeMode = PictureBoxSizeMode.StretchImage;
             selectedIcon.Image = Image.FromFile(Form1.workingDir + "\\Images\\IconGreenScreen.png");
             Form1.source.Controls.Add(selectedIcon);
@@ -78,10 +78,10 @@ namespace Sea_of_Thieves_helper
         }
         private static void SetSelected(PictureBox icon)
         {
-            //if (fishIcons != null)
-            //    selectedIcon.Location = new Point(fishIcons[selectedId].Location.X - 10, fishIcons[selectedId].Location.Y - 10);
-            //else
-            //    MessageBox.Show("SELECTED ICON NOT LOADED");
+            if (fishIcons != null)
+                selectedIcon.Location = new Point(fishIcons[selectedId].Location.X - 5, fishIcons[selectedId].Location.Y - 5);
+            else
+                MessageBox.Show("SELECTED ICON NOT LOADED");
         }
 
         private static void SetUnselected(PictureBox icon)
@@ -122,6 +122,8 @@ namespace Sea_of_Thieves_helper
             switch (e.KeyCode)
             {
                 case Keys.NumPad2:
+                    for (int i = 0; i < 5; i++)
+                        SetSelectedId(false);
                     break;
                 case Keys.NumPad4:
                     SetSelectedId(false);
@@ -130,6 +132,8 @@ namespace Sea_of_Thieves_helper
                     SetSelectedId(true);
                     break;
                 case Keys.NumPad8:
+                    for(int i = 0; i < 5; i++)
+                        SetSelectedId(true);
                     break;
                 case Keys.NumPad5:
                     Form1.source.TopMost = true;
