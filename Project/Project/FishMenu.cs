@@ -82,6 +82,8 @@ namespace Sea_of_Thieves_helper
                 selectedIcon.Location = new Point(fishIcons[selectedId].Location.X - 5, fishIcons[selectedId].Location.Y - 5);
             else
                 MessageBox.Show("SELECTED ICON NOT LOADED");
+
+            Form1.source.SetFishInfo(FishDataBase.Fishes[selectedId]);
         }
 
         private static void SetUnselected(PictureBox icon)

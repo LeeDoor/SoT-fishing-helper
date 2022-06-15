@@ -11,9 +11,9 @@ namespace Sea_of_Thieves_helper
 		private static readonly string FISH_PHOTO_PATH = "Images\\fishes";
 		public static List<Fish> Fishes { get; private set; } = new List<Fish>()
 		{
-			new Fish("splashtail", "Splashtails are found in most open bodies of water.Does not require Bait to catch.", $"{FISH_PHOTO_PATH}\\Ruby_Splashtail.jpg",
+			new Fish("splashtail", "everywhere", $"{FISH_PHOTO_PATH}\\Ruby_Splashtail.jpg",
 				new Species[]{
-					new Species ("rubyqqsplashtail", "Base variant", "",
+					new Species ("ruby splashtail", "Base variant", "",
 						new FishCost[]{
 							new FishCost(75, 190),
 							new FishCost(100, 255),
@@ -55,7 +55,7 @@ namespace Sea_of_Thieves_helper
 					),
 				}
 			),
-			new Fish("pondie", "Pondies are found in freshwater Ponds. Does not require Bait to catch.", $"{FISH_PHOTO_PATH}\\Charcoal_Pondie.jpg",
+			new Fish("pondie", "Freshwater Ponds", $"{FISH_PHOTO_PATH}\\Charcoal_Pondie.jpg",
 				new Species[]{
 					new Species ("charcoal pondie", "Base variant", "",
 						new FishCost[]{
@@ -99,7 +99,7 @@ namespace Sea_of_Thieves_helper
 					),
 				}
 			),
-			new Fish("islehopper", "Islehoppers can be found in the waters surrounding Large Islands. Does not require Bait to catch.", $"{FISH_PHOTO_PATH}\\Stone_Islehopper.jpg",
+			new Fish("islehopper", "Large Islands", $"{FISH_PHOTO_PATH}\\Stone_Islehopper.jpg",
 				new Species[]{
 					new Species ("Stone Islehopper", "Found at Shipwreck Bay, Shark Bait Cove, Crook's Hollow, Sailor's Bounty, Cannon Cove and Fetcher's Rest.", "",
 						new FishCost[]{
@@ -143,7 +143,7 @@ namespace Sea_of_Thieves_helper
 					)
 				}
 			),
-			new Fish("ancientscale", "Ancientscales can be found in the open waters of The Ancient Isles. Requires Leeches as Bait to catch.", $"{FISH_PHOTO_PATH}\\Smoke_Ancientscale.jpg",
+			new Fish("ancientscale", "The Ancient\nIsles", $"{FISH_PHOTO_PATH}\\Smoke_Ancientscale.jpg",
 				new Species[]{
 					new Species ("Almond Ancientscale", "Base variant", "",
 						new FishCost[]{
@@ -187,7 +187,7 @@ namespace Sea_of_Thieves_helper
 					)
 				}
 			),
-			new Fish("plentfin", "Plentifins can be found in the open waters of The Shores of Plenty. Requires Earthworms as Bait to catch.", $"{FISH_PHOTO_PATH}\\Olive_Plentifin.jpg",
+			new Fish("plentfin", "The Shores\nof Plenty", $"{FISH_PHOTO_PATH}\\Olive_Plentifin.jpg",
 				new Species[]{
 					new Species ("Olive Plentifin", "Base variant", "",
 						new FishCost[]{
@@ -231,7 +231,7 @@ namespace Sea_of_Thieves_helper
 					)
 				}
 			),
-			new Fish("wildsplash", "Wildsplashes are found in the open waters of The Wilds. Requires Earthworms as Bait to catch.", $"{FISH_PHOTO_PATH}\\Russet_Wildsplash.jpg",
+			new Fish("wildsplash", "The Wilds", $"{FISH_PHOTO_PATH}\\Russet_Wildsplash.jpg",
 				new Species[]{
 					new Species ("Russet Wildsplash", "Base variant", "",
 						new FishCost[]{
@@ -275,7 +275,7 @@ namespace Sea_of_Thieves_helper
 					)
 				}
 			),
-			new Fish("devilfish", "Devilfish are one of the four Regional Fish that are only found in the open waters of The Devil's Roar. Requires Grubs as Bait to catch.", $"{FISH_PHOTO_PATH}\\Ashen_Devilfish.jpg",
+			new Fish("devilfish", "The Devil's\nRoar", $"{FISH_PHOTO_PATH}\\Ashen_Devilfish.jpg",
 				new Species[]{
 					new Species ("Ashen Devilfish", "Base variant", "",
 						new FishCost[]{
@@ -319,7 +319,7 @@ namespace Sea_of_Thieves_helper
 					)
 				}
 			),
-			new Fish("battlegill", "Battlegills are found in waters near Skeleton Ships, and any active Skeleton Fort, Fort of Fortune, or Fort of the Damned. Requires Grubs as Bait to catch.", $"{FISH_PHOTO_PATH}\\Jade_Battlegill.jpg",
+			new Fish("battlegill", "near Skeleton\nShips, Fort", $"{FISH_PHOTO_PATH}\\Jade_Battlegill.jpg",
 				new Species[]{
 					new Species ("Jade Battlegill", "Base variant", "",
 						new FishCost[]{
@@ -363,7 +363,7 @@ namespace Sea_of_Thieves_helper
 					)
 				}
 			),
-			new Fish("stormfish", "Stormfish are found in open waters inside heavy Storms. Requires Leeches as Bait to catch.", $"{FISH_PHOTO_PATH}\\Ancient_Stormfish.jpg",
+			new Fish("stormfish", "inside heavy\nStorms", $"{FISH_PHOTO_PATH}\\Ancient_Stormfish.jpg",
 				new Species[]{
 					new Species ("Ancient Stormfish", "The Ancient Isles variant", "",
 						new FishCost[]{
@@ -407,7 +407,7 @@ namespace Sea_of_Thieves_helper
 					)
 				}
 			),
-			new Fish("wreckers", "Wreckers can only be found near Shipwrecks. Requires Earthworms as Bait to catch.", $"{FISH_PHOTO_PATH}\\Rose_Wrecker.jpg",
+			new Fish("wreckers", "near Shipwrecks", $"{FISH_PHOTO_PATH}\\Rose_Wrecker.jpg",
 				new Species[]{
 					new Species ("Rose Wrecker", "Base variant", "",
 						new FishCost[]{

@@ -24,24 +24,19 @@ namespace Sea_of_Thieves_helper
 			gkh.HookedKeys.Add(Keys.NumPad8);
 			gkh.HookedKeys.Add(Keys.NumPad5);
 			gkh.KeyDown += new KeyEventHandler(FishMenu.gkh_KeyDown);
-			//FishMenu.CreateButtons();
-
-
-			//listView1.LargeImageList = imageList1;
-			//for(int i = 0; i < FishDataBase.Fishes.Count; i++)
-			//{
-			//    ListViewItem item = new ListViewItem();
-			//    item.ImageIndex = i * 5;
-			//    listView1.Items.Add(item);
-			//}
-
 
 			FishMenu.CreateIconsAllFishes();
 		}
 
-		private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-		{
+		public void SetFishInfo(Fish fish)
+        {
+			TitleText.Text = fish.Name;
+			DescriptionText.Text = fish.Description;
 
-		}
+        }
+
+		//I REMOVED THIS EMPTY FUNCTION IF YOU LL HAVE AN ERROR TRY TO REZ IT
+		//private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+
 	}
 }
