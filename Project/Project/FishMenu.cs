@@ -56,7 +56,8 @@ namespace Sea_of_Thieves_helper
             pictureBox.Size = new Size(pictureWidth, pictureHeight);
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox.Location = new Point(space + (pictureWidth+space)*width, space + (pictureHeight + space) * height);
-            pictureBox.Image = Image.FromFile(Form1.workingDir + "\\" + FishDataBase.Fishes[width + height * gridWidth].Picture);
+            pictureBox.Image = Image.FromFile(Form1.workingDir + FishDataBase.Fishes[width + height * gridWidth].Picture);
+            pictureBox.BackColor = Color.Transparent;
             fishIcons[width + height * gridWidth] = pictureBox;
             Form1.source.Controls.Add(pictureBox);
         }

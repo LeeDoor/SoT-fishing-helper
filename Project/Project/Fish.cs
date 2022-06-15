@@ -8,16 +8,18 @@ namespace Sea_of_Thieves_helper
 {
     public class Fish
     {
-        public string Name { get; private set; }
-        public string Description { get; private set; }
+        public string Name { get; }
+        public string Description { get; }
+        public BaitType Bait { get; }
         public string Picture { get; }
         private Species[] _species = new Species[5];
-        public Fish(string name, string globalFishingMethod, string picture, Species[] species)
+        public Fish(string name, string globalFishingMethod, BaitType bait, string picture, Species[] species)
         {
             Name = name;
             Description = globalFishingMethod;
             _species = species;
             Picture = picture;
+            Bait = bait;
         }
     }
 }

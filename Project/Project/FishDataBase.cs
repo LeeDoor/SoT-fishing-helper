@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace Sea_of_Thieves_helper
 {
+	
+
 	public static class FishDataBase
 	{
 		private static readonly string FISH_PHOTO_PATH = "Images\\fishes";
 		public static List<Fish> Fishes { get; private set; } = new List<Fish>()
 		{
-			new Fish("splashtail", "everywhere", $"{FISH_PHOTO_PATH}\\Ruby_Splashtail.jpg",
+			new Fish("splashtail", "everywhere", BaitType.None, $"{FISH_PHOTO_PATH}\\Ruby_Splashtail.jpg",
 				new Species[]{
 					new Species ("ruby splashtail", "Base variant", "",
 						new FishCost[]{
@@ -55,7 +57,7 @@ namespace Sea_of_Thieves_helper
 					),
 				}
 			),
-			new Fish("pondie", "Freshwater Ponds", $"{FISH_PHOTO_PATH}\\Charcoal_Pondie.jpg",
+			new Fish("pondie", "Freshwater Ponds", BaitType.None, $"{FISH_PHOTO_PATH}\\Charcoal_Pondie.jpg",
 				new Species[]{
 					new Species ("charcoal pondie", "Base variant", "",
 						new FishCost[]{
@@ -99,7 +101,7 @@ namespace Sea_of_Thieves_helper
 					),
 				}
 			),
-			new Fish("islehopper", "Large Islands", $"{FISH_PHOTO_PATH}\\Stone_Islehopper.jpg",
+			new Fish("islehopper", "Large Islands", BaitType.None, $"{FISH_PHOTO_PATH}\\Stone_Islehopper.jpg",
 				new Species[]{
 					new Species ("Stone Islehopper", "Found at Shipwreck Bay, Shark Bait Cove, Crook's Hollow, Sailor's Bounty, Cannon Cove and Fetcher's Rest.", "",
 						new FishCost[]{
@@ -143,7 +145,7 @@ namespace Sea_of_Thieves_helper
 					)
 				}
 			),
-			new Fish("ancientscale", "The Ancient\nIsles", $"{FISH_PHOTO_PATH}\\Smoke_Ancientscale.jpg",
+			new Fish("ancientscale", "The Ancient\nIsles", BaitType.Leech, $"{FISH_PHOTO_PATH}\\Smoke_Ancientscale.jpg",
 				new Species[]{
 					new Species ("Almond Ancientscale", "Base variant", "",
 						new FishCost[]{
@@ -187,7 +189,7 @@ namespace Sea_of_Thieves_helper
 					)
 				}
 			),
-			new Fish("plentfin", "The Shores\nof Plenty", $"{FISH_PHOTO_PATH}\\Olive_Plentifin.jpg",
+			new Fish("plentfin", "The Shores\nof Plenty", BaitType.Earthworm, $"{FISH_PHOTO_PATH}\\Olive_Plentifin.jpg",
 				new Species[]{
 					new Species ("Olive Plentifin", "Base variant", "",
 						new FishCost[]{
@@ -231,7 +233,7 @@ namespace Sea_of_Thieves_helper
 					)
 				}
 			),
-			new Fish("wildsplash", "The Wilds", $"{FISH_PHOTO_PATH}\\Russet_Wildsplash.jpg",
+			new Fish("wildsplash", "The Wilds", BaitType.Earthworm, $"{FISH_PHOTO_PATH}\\Russet_Wildsplash.jpg",
 				new Species[]{
 					new Species ("Russet Wildsplash", "Base variant", "",
 						new FishCost[]{
@@ -275,7 +277,7 @@ namespace Sea_of_Thieves_helper
 					)
 				}
 			),
-			new Fish("devilfish", "The Devil's\nRoar", $"{FISH_PHOTO_PATH}\\Ashen_Devilfish.jpg",
+			new Fish("devilfish", "The Devil's\nRoar", BaitType.Grub, $"{FISH_PHOTO_PATH}\\Ashen_Devilfish.jpg",
 				new Species[]{
 					new Species ("Ashen Devilfish", "Base variant", "",
 						new FishCost[]{
@@ -319,7 +321,7 @@ namespace Sea_of_Thieves_helper
 					)
 				}
 			),
-			new Fish("battlegill", "near Skeleton\nShips, Fort", $"{FISH_PHOTO_PATH}\\Jade_Battlegill.jpg",
+			new Fish("battlegill", "near Skeleton\nShips, Fort", BaitType.Grub, $"{FISH_PHOTO_PATH}\\Jade_Battlegill.jpg",
 				new Species[]{
 					new Species ("Jade Battlegill", "Base variant", "",
 						new FishCost[]{
@@ -363,7 +365,7 @@ namespace Sea_of_Thieves_helper
 					)
 				}
 			),
-			new Fish("stormfish", "inside heavy\nStorms", $"{FISH_PHOTO_PATH}\\Ancient_Stormfish.jpg",
+			new Fish("stormfish", "inside heavy\nStorms", BaitType.Leech, $"{FISH_PHOTO_PATH}\\Ancient_Stormfish.jpg",
 				new Species[]{
 					new Species ("Ancient Stormfish", "The Ancient Isles variant", "",
 						new FishCost[]{
@@ -407,7 +409,7 @@ namespace Sea_of_Thieves_helper
 					)
 				}
 			),
-			new Fish("wreckers", "near Shipwrecks", $"{FISH_PHOTO_PATH}\\Rose_Wrecker.jpg",
+			new Fish("wreckers", "near Shipwrecks", BaitType.Earthworm, $"{FISH_PHOTO_PATH}\\Rose_Wrecker.jpg",
 				new Species[]{
 					new Species ("Rose Wrecker", "Base variant", "",
 						new FishCost[]{
@@ -451,6 +453,14 @@ namespace Sea_of_Thieves_helper
 					)
 				}
 			)
+		}; 
+		
+		public static Dictionary<BaitType, string> BaitPicturePath = new Dictionary<BaitType, string>()
+		{
+			[BaitType.None] =		"Images\\baits\\Empty.png",
+			[BaitType.Grub] =		"Images\\baits\\Grubs.png",
+			[BaitType.Leech] =		"Images\\baits\\Leeches.png",
+			[BaitType.Earthworm] =	"Images\\baits\\Earthworms.png",
 		};
 	}
 }

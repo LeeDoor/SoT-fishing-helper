@@ -5,13 +5,21 @@ namespace Sea_of_Thieves_helper
 		public static Form1 source = new Form1();
 		public static string workingDir = "";
 
+		private PictureBox baitIcon;
+
 		GlobalKeyboardHook gkh = new GlobalKeyboardHook();
 
 		public Form1()
 		{
+			baitIcon = new PictureBox();
+			baitIcon.Location = new Point(28, 443);
+			baitIcon.Size = new Size(101,101);
+			baitIcon.SizeMode = PictureBoxSizeMode.CenterImage;
+			baitIcon.BackColor = Color.Transparent;
+			Controls.Add(baitIcon);
+
 			source = this;
-			string workingDirectory = Environment.CurrentDirectory;
-			workingDir = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
+			workingDir = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\";
 			InitializeComponent();
 		}
 
@@ -30,9 +38,9 @@ namespace Sea_of_Thieves_helper
 
 		public void SetFishInfo(Fish fish)
         {
+			baitIcon.Image = Image.FromFile(workingDir + FishDataBase.BaitPicturePath[fish.Bait]);
 			TitleText.Text = fish.Name;
 			DescriptionText.Text = fish.Description;
-
         }
 
 		//I REMOVED THIS EMPTY FUNCTION IF YOU LL HAVE AN ERROR TRY TO REZ IT
