@@ -139,8 +139,7 @@ namespace Sea_of_Thieves_helper
                         SetSelectedId(true);
                     break;
                 case Keys.NumPad5:
-                    Form1.source.TopMost = true;
-                    Form1.source.TopMost = false;
+                    Form1.source.ChangeWindowStatus();
                     break;
             }
         }

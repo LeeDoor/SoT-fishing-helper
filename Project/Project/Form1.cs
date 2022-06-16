@@ -6,6 +6,7 @@ namespace Sea_of_Thieves_helper
 		public static string workingDir = "";
 
 		private PictureBox baitIcon;
+		private bool openStatus = false;
 
 		GlobalKeyboardHook gkh = new GlobalKeyboardHook();
 
@@ -18,6 +19,7 @@ namespace Sea_of_Thieves_helper
 			baitIcon.BackColor = Color.Transparent;
 			Controls.Add(baitIcon);
 
+			ChangeWindowStatus(); 
 			source = this;
 			workingDir = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\";
 			InitializeComponent();
@@ -43,6 +45,20 @@ namespace Sea_of_Thieves_helper
 			DescriptionText.Text = fish.Description;
         }
 
+        public void ChangeWindowStatus()
+        {
+			openStatus = !openStatus;
+
+            if (openStatus)
+			{
+				Opacity = 0.7d;
+				//TopMost = true;
+			}
+            else
+			{
+				Opacity = 0;
+			}
+        }
 		//I REMOVED THIS EMPTY FUNCTION IF YOU LL HAVE AN ERROR TRY TO REZ IT
 		//private void listView1_SelectedIndexChanged(object sender, EventArgs e)
 

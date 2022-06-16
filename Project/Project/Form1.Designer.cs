@@ -43,7 +43,6 @@
             this.TitleText.Name = "TitleText";
             this.TitleText.Size = new System.Drawing.Size(172, 47);
             this.TitleText.TabIndex = 0;
-            this.TitleText.Text = "RED FISH";
             // 
             // DescriptionText
             // 
@@ -55,7 +54,6 @@
             this.DescriptionText.Name = "DescriptionText";
             this.DescriptionText.Size = new System.Drawing.Size(275, 36);
             this.DescriptionText.TabIndex = 1;
-            this.DescriptionText.Text = "The Shores of Plenty";
             // 
             // Form1
             // 
@@ -67,7 +65,10 @@
             this.Controls.Add(this.DescriptionText);
             this.Controls.Add(this.TitleText);
             this.ForeColor = System.Drawing.Color.Transparent;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Location = new System.Drawing.Point(0, 400);
             this.Name = "Form1";
+            this.Opacity = 0.7D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
