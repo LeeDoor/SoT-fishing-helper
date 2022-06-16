@@ -125,19 +125,29 @@ namespace Sea_of_Thieves_helper
             switch (e.KeyCode)
             {
                 case Keys.NumPad2:
-                    for (int i = 0; i < 5; i++)
-                        SetSelectedId(false);
+                    SetSelectedId(selectedId + 5);
                     break;
+
                 case Keys.NumPad4:
                     SetSelectedId(false);
                     break;
+
                 case Keys.NumPad6:
                     SetSelectedId(true);
                     break;
-                case Keys.NumPad8:
-                    for(int i = 0; i < 5; i++)
-                        SetSelectedId(true);
+
+                case Keys.NumPad7:
+                    Form1.source.ChangeCurrentOpacity(-0.05f);
                     break;
+
+                case Keys.NumPad8:
+                    SetSelectedId(selectedId - 5);
+                    break;
+
+                case Keys.NumPad9:
+                    Form1.source.ChangeCurrentOpacity(0.05f);
+                    break;
+
                 case Keys.NumPad5:
                     Form1.source.ChangeWindowStatus();
                     break;

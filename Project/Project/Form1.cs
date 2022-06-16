@@ -1,5 +1,6 @@
 namespace Sea_of_Thieves_helper
 {
+	public delegate void OpacityChanged ();
 	public partial class Form1 : Form
 	{
 		public static Form1 source = new Form1();
@@ -7,8 +8,11 @@ namespace Sea_of_Thieves_helper
 
 		private PictureBox baitIcon;
 		private bool openStatus = false;
+		public float CurrentOpacity { get; set; } = 0.7f;
 
 		GlobalKeyboardHook gkh = new GlobalKeyboardHook();
+
+		public event OpacityChanged OnOpacityChanged;
 
 		public Form1()
 		{
@@ -19,7 +23,9 @@ namespace Sea_of_Thieves_helper
 			baitIcon.BackColor = Color.Transparent;
 			Controls.Add(baitIcon);
 
-			ChangeWindowStatus(); 
+			OnOpacityChanged += SetOpacity;
+
+			ChangeWindowStatus();
 			source = this;
 			workingDir = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\";
 			InitializeComponent();
@@ -33,6 +39,8 @@ namespace Sea_of_Thieves_helper
 			gkh.HookedKeys.Add(Keys.NumPad6);
 			gkh.HookedKeys.Add(Keys.NumPad8);
 			gkh.HookedKeys.Add(Keys.NumPad5);
+			gkh.HookedKeys.Add(Keys.NumPad7);
+			gkh.HookedKeys.Add(Keys.NumPad9);
 			gkh.KeyDown += new KeyEventHandler(FishMenu.gkh_KeyDown);
 
 			FishMenu.CreateIconsAllFishes();
@@ -47,18 +55,31 @@ namespace Sea_of_Thieves_helper
 
         public void ChangeWindowStatus()
         {
-			openStatus = !openStatus;
+            openStatus = !openStatus;
 
             if (openStatus)
 			{
-				Opacity = 0.7d;
-				//TopMost = true;
+				SetOpacity();
 			}
             else
 			{
-				Opacity = 0;
+				Opacity = 0f;
 			}
         }
+
+		public void SetOpacity()
+        {
+			Opacity = CurrentOpacity;
+		}
+
+		public void ChangeCurrentOpacity(float difference)
+        {
+			CurrentOpacity += difference;
+			if (CurrentOpacity <= 0) CurrentOpacity = 0;
+			if (CurrentOpacity >= 1) CurrentOpacity = 1;
+			OnOpacityChanged?.Invoke();
+		}
+
 		//I REMOVED THIS EMPTY FUNCTION IF YOU LL HAVE AN ERROR TRY TO REZ IT
 		//private void listView1_SelectedIndexChanged(object sender, EventArgs e)
 
