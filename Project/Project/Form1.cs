@@ -3,6 +3,7 @@ namespace Sea_of_Thieves_helper
 	public delegate void OpacityChanged ();
 	public partial class Form1 : Form
 	{
+		private readonly Point mapPosition = new Point(233, 387);
 		public static Form1 source = new Form1();
 		public static string workingDir = "";
 
@@ -51,7 +52,14 @@ namespace Sea_of_Thieves_helper
 			baitIcon.Image = Image.FromFile(workingDir + FishDataBase.BaitPicturePath[fish.Bait]);
 			TitleText.Text = fish.Name;
 			DescriptionText.Text = fish.Description;
-        }
+
+			System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
+			System.Drawing.Graphics formGraphics;
+			formGraphics = this.CreateGraphics();
+			formGraphics.FillEllipse(myBrush, new Rectangle(fish._species[0].FishingSpot[0].X = mapPosition.X, fish._species[0].FishingSpot[0].Y + fish._species[0].FishingSpot[0].Y, fish._species[0].FishingSpot[0].Width, fish._species[0].FishingSpot[0].Height) ) ;
+			myBrush.Dispose();
+			formGraphics.Dispose();
+		}
 
         public void ChangeWindowStatus()
         {
