@@ -54,35 +54,8 @@ namespace Sea_of_Thieves_helper
 			baitIcon.Image = Image.FromFile(workingDir + FishDataBase.BaitPicturePath[fish.Bait]);
 			TitleText.Text = fish.Name;
 			DescriptionText.Text = fish.Description;
-			DrawMapAreas(fish);
 		}
 
-		private void DrawMapAreas(Species species)
-        {
-			HashSet<Rectangle> rectangles = new HashSet<Rectangle>();
-			foreach(var rect in species.FishingSpot)
-            {
-				rectangles.Add(rect);
-            }
-
-			foreach(var rect in rectangles)
-			{
-				PictureBox pictureBox = new PictureBox();
-				pictureBox.Location = new Point(rect.X + mapPosition.X, rect.Y + mapPosition.Y);
-				pictureBox.Size = new Size(rect.Width, rect.Height);
-				pictureBox.Image = Image.FromFile(workingDir + "Images\\IconGreenScreen.png");
-				pictureBox.BackColor = Color.Transparent;
-				pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-				Controls.Add(pictureBox);
-			}
-        }
-		private void DrawMapAreas(Fish fish)
-		{
-			foreach(var spec in fish._species)
-            {
-				DrawMapAreas(spec);
-            }
-		}
 
 		public void ChangeWindowStatus()
         {
