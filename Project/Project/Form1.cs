@@ -3,15 +3,14 @@ namespace Sea_of_Thieves_helper
 	public delegate void OpacityChanged ();
 	public partial class Form1 : Form
 	{
-		private readonly Point mapPosition = new Point(233, 387);
 		public static Form1 source = new Form1();
 		public static string workingDir = "";
-
-		private PictureBox baitIcon;
-		private bool openStatus = false;
 		public float CurrentOpacity { get; set; } = 0.7f;
 
-		GlobalKeyboardHook gkh = new GlobalKeyboardHook();
+		private readonly Point mapPosition = new Point(233, 387);
+		private PictureBox baitIcon;
+		private bool openStatus = false;
+		private GlobalKeyboardHook gkh = new GlobalKeyboardHook();
 
 		public event OpacityChanged OnOpacityChanged;
 
@@ -30,6 +29,9 @@ namespace Sea_of_Thieves_helper
 			source = this;
 			workingDir = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\";
 			InitializeComponent();
+
+			TopMost = true;
+			TransparencyKey = SystemColors.Control;
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
@@ -52,16 +54,37 @@ namespace Sea_of_Thieves_helper
 			baitIcon.Image = Image.FromFile(workingDir + FishDataBase.BaitPicturePath[fish.Bait]);
 			TitleText.Text = fish.Name;
 			DescriptionText.Text = fish.Description;
-
-			System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
-			System.Drawing.Graphics formGraphics;
-			formGraphics = this.CreateGraphics();
-			formGraphics.FillEllipse(myBrush, new Rectangle(fish._species[0].FishingSpot[0].X = mapPosition.X, fish._species[0].FishingSpot[0].Y + fish._species[0].FishingSpot[0].Y, fish._species[0].FishingSpot[0].Width, fish._species[0].FishingSpot[0].Height) ) ;
-			myBrush.Dispose();
-			formGraphics.Dispose();
+			DrawMapAreas(fish);
 		}
 
-        public void ChangeWindowStatus()
+		private void DrawMapAreas(Species species)
+        {
+			HashSet<Rectangle> rectangles = new HashSet<Rectangle>();
+			foreach(var rect in species.FishingSpot)
+            {
+				rectangles.Add(rect);
+            }
+
+			foreach(var rect in rectangles)
+			{
+				PictureBox pictureBox = new PictureBox();
+				pictureBox.Location = new Point(rect.X + mapPosition.X, rect.Y + mapPosition.Y);
+				pictureBox.Size = new Size(rect.Width, rect.Height);
+				pictureBox.Image = Image.FromFile(workingDir + "Images\\IconGreenScreen.png");
+				pictureBox.BackColor = Color.Transparent;
+				pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+				Controls.Add(pictureBox);
+			}
+        }
+		private void DrawMapAreas(Fish fish)
+		{
+			foreach(var spec in fish._species)
+            {
+				DrawMapAreas(spec);
+            }
+		}
+
+		public void ChangeWindowStatus()
         {
             openStatus = !openStatus;
 
@@ -87,9 +110,5 @@ namespace Sea_of_Thieves_helper
 			if (CurrentOpacity >= 1) CurrentOpacity = 1;
 			OnOpacityChanged?.Invoke();
 		}
-
-		//I REMOVED THIS EMPTY FUNCTION IF YOU LL HAVE AN ERROR TRY TO REZ IT
-		//private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-
 	}
 }
