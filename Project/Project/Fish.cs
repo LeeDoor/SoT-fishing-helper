@@ -12,7 +12,7 @@ namespace Sea_of_Thieves_helper
         public string Description { get; }
         public BaitType Bait { get; }
         public string Picture { get; }
-        private Species[] _species = new Species[5];
+        public Species[] _species = new Species[5];
         public Fish(string name, string globalFishingMethod, BaitType bait, string picture, Species[] species)
         {
             Name = name;
